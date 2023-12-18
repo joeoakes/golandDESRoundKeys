@@ -66,6 +66,8 @@ func generateRoundKeys(key []byte) [16][48]byte {
 		// Perform a left circular shift on the left and right halves
 		leftCircularShift(left, i)
 		leftCircularShift(right, i)
+		//left = left[shifts[i]:] + left[:shifts[i]]
+		//right = right[shifts[i]:] + right[:shifts[i]]
 
 		// Combine left and right halves
 		combined := append(left, right...)
